@@ -1,0 +1,17 @@
+[project]
+name = "chem-to-struct"
+version = "0.1.8"
+description = "Simple chemical tagger using chemical synonyms and canonical smiles found in ChEMBL"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["pyahocorasick==2.1.0"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+include = ["chem_to_struct/data/automaton.pkl"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/chem_to_struct"]
