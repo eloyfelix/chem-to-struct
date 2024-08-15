@@ -7,7 +7,7 @@ with importlib.resources.open_binary('chem_to_struct.data', 'automaton.pkl') as 
     automaton = pickle.load(file)
 
 def name_to_structure(name):
-    return automaton.get(name, None)
+    return automaton.get(name.lower(), None)
 
 
 def extract_entities(text):
