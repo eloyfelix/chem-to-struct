@@ -1,1 +1,0 @@
-from .chem_to_struct import ChemToStruct
