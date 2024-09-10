@@ -1,4 +1,4 @@
-from .xml_utils import parse_mesh
+from .mesh_xml_utils import parse_mesh
 import ahocorasick
 import pickle
 import argparse
@@ -20,6 +20,7 @@ def create_file():
         type=str,
         help="Path to the MeSH XML desc.",
     )
+
     parser.add_argument(
         "--automaton_filename",
         type=str,

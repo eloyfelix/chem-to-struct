@@ -17,7 +17,7 @@ class BioAhoTagger:
             ) as file:
                 return pickle.load(file)
         else:
-            # Load from external file
+            # load from external file
             with open(file_path, "rb") as file:
                 return pickle.load(file)
 
