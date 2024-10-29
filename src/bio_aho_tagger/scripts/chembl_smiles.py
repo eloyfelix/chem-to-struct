@@ -23,7 +23,7 @@ def main():
         csvreader = csv.reader(csvfile, delimiter="\t")
         for idx, (synonym, smiles) in enumerate(csvreader):
             syn = synonym.lower()
-            automaton.add_word(syn, (idx, (syn, smiles)))
+            automaton.add_word(syn, (syn, (syn, "Chemical", smiles)))
 
     automaton.make_automaton()
 
