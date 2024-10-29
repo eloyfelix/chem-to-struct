@@ -1,7 +1,7 @@
 [project]
 name = "bio_aho_tagger"
 version = "0.1.0"
-description = "Baseline dictionary based package using MeSH and ChEMBL molecule synonyms to resolve chemical structures and tag biological entities."
+description = "Baseline dictionary based package to resolve chemical structures and tag biological entities."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = ["pyahocorasick==2.1.0"]
@@ -11,7 +11,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build]
-include = ["bio_aho_tagger/data/automaton.pkl"]
+include = ["bio_aho_tagger/data/chembl_smiles.pkl"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/bio_aho_tagger"]

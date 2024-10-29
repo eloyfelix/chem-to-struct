@@ -26,7 +26,7 @@ ORDER BY max_phase ASC NULLS FIRST, rank_priority ASC
 with engine.connect() as conn:
     res = conn.execute(text(query))
 
-    with open("output.tsv", "w", newline="") as file:
+    with open("chembl_smiles.tsv", "w", newline="") as file:
         writer = csv.writer(file, delimiter="\t")
 
         for row in res:
