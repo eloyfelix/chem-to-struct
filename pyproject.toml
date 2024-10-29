@@ -1,7 +1,7 @@
 [project]
-name = "chem-to-struct"
+name = "bio_aho_tagger"
 version = "0.1.0"
-description = "Simple chemical tagger using chemical synonyms and canonical smiles found in ChEMBL"
+description = "Baseline dictionary based package to resolve chemical structures and tag biological entities."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = ["pyahocorasick==2.1.0"]
@@ -11,10 +11,10 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build]
-include = ["chem_to_struct/data/automaton.pkl"]
+include = ["bio_aho_tagger/data/chembl_smiles.pkl"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/chem_to_struct"]
+packages = ["src/bio_aho_tagger"]
 
 [project.scripts]
-create-chem-dict = "chem_to_struct.scripts:create_file"
+create-tagger-dict = "bio_aho_tagger.scripts:create_file"
