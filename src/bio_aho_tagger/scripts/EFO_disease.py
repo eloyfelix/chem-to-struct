@@ -3,7 +3,10 @@ from collections import defaultdict
 from rdflib import Graph
 import ahocorasick
 import pickle
+from nltk.corpus import stopwords
+import nltk
 
+nltk.download("stopwords")
 
 def parse_efo_diseases(filepath):
     g = Graph()
@@ -33,6 +36,8 @@ def parse_efo_diseases(filepath):
 
 def main():
 
+    stop_words = set(stopwords.words("english"))
+
     url = "https://github.com/EBISPOT/efo/releases/download/current/efo.owl"
     filename = "efo.owl"
 
@@ -48,7 +53,8 @@ def main():
         label = data["label"]
         for s in data["synonyms"]["Exact"]:
             syn = s.lower()
-            automaton.add_word(syn, (syn, (label, "Disease", o_id)))
+            if syn not in stop_words:
+                automaton.add_word(syn, (syn, (label, "Disease", o_id)))
 
     automaton.make_automaton()
 
