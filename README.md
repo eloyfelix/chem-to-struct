@@ -19,7 +19,7 @@ entities = bt.extract_entities("The doctor prescribed metformin for managing dia
 ```python
 from bio_aho_tagger import BioAhoTagger
 
-bt = BioAhoTagger("EFO_disease")
+bt = BioAhoTagger("efo_disease")
 disease = bt.get("lung cancer")
 
 entities = bt.extract_entities("The doctor prescribed metformin for managing diabetes and suggested amoxicillin to treat the bacterial infection.")
