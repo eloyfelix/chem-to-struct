@@ -15,6 +15,3 @@ include = ["bio_aho_tagger/data/chembl_smiles.pkl", "bio_aho_tagger/data/efo_dis
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/bio_aho_tagger"]
-
-[project.scripts]
-create-tagger-dict = "bio_aho_tagger.scripts:create_file"
