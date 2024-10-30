@@ -48,8 +48,7 @@ def main():
         label = data["label"]
         for s in data["synonyms"]["Exact"]:
             syn = s.lower()
-            if len(syn) > 3:
-                automaton.add_word(syn, (syn, (label, "Disease", o_id)))
+            automaton.add_word(syn, (syn, (label, "Disease", o_id)))
 
     automaton.make_automaton()
 
